@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite  
+# Space Tourism Website
+A responsive space tourism website built with React, TypeScript, and Framer Motion. This interactive multi-page website showcases various space destinations with smooth animations and transitions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+. Responsive Design: Fully responsive layout for mobile, tablet, and desktop
 
-## React Compiler
+. Interactive Tabs: Smoothly switch between different space destinations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+. Animations: Beautiful page transitions and hover effects using Framer Motion
 
-## Expanding the ESLint configuration
+. Modern Stack: Built with React, TypeScript, Vite, and Tailwind CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+. Client-side Routing: Seamless navigation with React Routine
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+src/
+├── assets/          # Images and static assets
+├── components/      # Reusable components
+│   ├── Header.tsx   # Navigation header
+│   └── DestinationTabs.tsx # Interactive destination tabs
+├── pages/          # Page components
+│   ├── Home.tsx
+│   ├── Destination.tsx
+│   ├── Crew.tsx
+│   └── Technology.tsx
+├── data/           # JSON data files
+│   └── data.json   # Destination data
+└── main.tsx        # Application entry point
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+. React 18 - Frontend library
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+. TypeScript - Type safety
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+. Vite - Build tool and development server
+
+. React Router DOM - Client-side routing
+
+. Framer Motion - Animation library
+
+. Tailwind CSS - Utility-first CSS framework
+
+## Getting Started
+
+Prerequisites
+Node.js (version 18 or higher)
+npm or yarn
+
+## Installation
+1.) Clone the repository:
+git clone <repository-url>
+cd space-tourism
+
+2.) Install dependencies:
+npm install
+
+3.) Start the development server:
+npm run dev
+
+4.) Open your browser and visit:
+http://localhost:5173
+
+## Build Configuration
+
+This project uses Vite for fast builds and Hot Module Replacement (HMR). The configuration includes:
+
+. TypeScript support
+
+. Path aliases
+
+. Optimized asset handling
+
+. CSS preprocessing with PostCSS
+
+## Design Features
+
+. Smooth page transitions
+
+. Interactive hover states
+
+. Accessibility-friendly navigation
+
+. Optimized image loading
+
+. Consistent spacing and typography
+
+##  License
+
+This project is created as part of a frontend challenge. All design assets and content are provided for educational purposes.
