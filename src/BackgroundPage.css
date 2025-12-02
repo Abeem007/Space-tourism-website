@@ -1,0 +1,153 @@
+.landing-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('./assets/home/background-home-mobile.jpg');
+}
+
+@media (min-width:768px) {
+    .landing-bg{
+        background-image: url('./assets//home/background-home-tablet.jpg');
+    }
+}
+@media (min-width:1024px) {
+    .landing-bg{
+        background-image: url('./assets//home/background-home-desktop.jpg');
+    }
+}
+
+.destination-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./assets/destination/background-destination-mobile.jpg");
+
+}
+
+@media (min-width: 768px) {
+  .destination-bg {
+    background-image: url("./assets/destination/background-destination-tablet.jpg");
+  }
+
+}
+@media (min-width: 1024px) {
+  .destination-bg {
+    background-image: url("./assets/destination/background-destination-desktop.jpg");
+  }
+}
+
+.crew-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./assets/crew/background-crew-desktop.jpg");
+
+}
+
+@media (min-width: 768px) {
+  .crew-bg {
+    background-image: url("./assets/crew/background-crew-tablet.jpg");
+  }
+
+}
+@media (min-width: 1024px) {
+  .crew-bg {
+    background-image: url("./assets/crew/background-crew-desktop.jpg");
+  }
+}
+
+.technology-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./assets/technology/background-technology-mobile.jpg");
+
+}
+
+@media (min-width: 768px) {
+  .technology-bg {
+    background-image: url("./assets/technology/background-technology-tablet.jpg");
+  }
+
+}
+@media (min-width: 1024px) {
+  .technology-bg {
+    background-image: url("./assets/technology/background-technology-desktop.jpg");
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.home-content {
+  animation: fadeIn 1s ease-out;
+}
+
+.home-text-content {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.home-title {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.home-description {
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.home-explore-circle {
+  animation: scaleIn 1s ease-out 1.2s both;
+  transition: transform 0.3s ease;
+}
+
+.home-explore-circle:hover {
+  transform: scale(1.1);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+    display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40) 0.5s both;
+  width: 0;
+  max-width: fit-content;
+}
