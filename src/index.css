@@ -2,6 +2,50 @@
 
 
 
+
+.destination-bg,
+.crew-bg,
+.technology-bg,
+.landing-bg {
+  will-change: background-image;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.motion-element,
+[data-framer-motion] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+
+img,
+picture {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  max-width: 100%;
+  height: auto;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+img[loading="lazy"] {
+  background-color: #0B0D17; 
+}
+
+
+
 body {
   margin: 0;
   padding: 0;

@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Destination from "./pages/Destination";
-
+import BackgroundPreloader from "./components/BackgroundPreloader";
 import "./index.css";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
@@ -10,6 +10,7 @@ import Technology from "./pages/Technology";
 function App() {
   return (
     <div className="">
+      <BackgroundPreloader />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />

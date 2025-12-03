@@ -1,24 +1,22 @@
 const imageVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.8,
-    rotate: -5,
+    scale: 0.95,
+    
   },
   visible: {
     opacity: 1,
     scale: 1,
-    rotate: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeOut" as const,
     },
   },
   exit: {
     opacity: 0,
-    scale: 1.2,
-    rotate: 5,
+    scale: 1.05,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 };
@@ -26,22 +24,22 @@ const imageVariants = {
 const contentVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      delay: 0.2,
+      duration: 0.4,
+      delay: 0.1,
       ease: "easeOut" as const,
     },
   },
   exit: {
     opacity: 0,
-    y: -30,
+    y: -20,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   },
 };

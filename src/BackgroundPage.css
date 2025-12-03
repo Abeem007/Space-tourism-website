@@ -7,12 +7,12 @@
 
 @media (min-width:768px) {
     .landing-bg{
-        background-image: url('/assets//home/background-home-tablet.jpg');
+        background-image: url('/assets/home/background-home-tablet.jpg');
     }
 }
 @media (min-width:1024px) {
     .landing-bg{
-        background-image: url('/assets//home/background-home-desktop.jpg');
+        background-image: url('/assets/home/background-home-desktop.jpg');
     }
 }
 

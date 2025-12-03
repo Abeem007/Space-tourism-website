@@ -26,7 +26,7 @@ const Crew = () => {
           {/* Content */}
           <AnimatePresence mode="wait">
             <motion.div
-              className="flex flex-col justify-center items-center lg:justify-start lg:items-start text-center lg:text-left space-y-3 mt-4 md:mt-0"
+              className=" flex flex-col justify-center items-center lg:justify-start lg:items-start text-center lg:text-left space-y-3 mt-4 md:mt-0"
               key={activeTab.id}
               variants={contentVariants}
               initial="hidden"
