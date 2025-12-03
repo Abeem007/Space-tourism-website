@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const images = import.meta.glob("/assets/**/*.{jpg,png}",{eager:true})
+const images = import.meta.glob("/public/assets/**/*.{jpg,png}",{eager:true})
 
 const BackgroundPreloader = () => {
   useEffect(() => {

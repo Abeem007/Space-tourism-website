@@ -14,7 +14,7 @@ const Crew = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTab = crew[activeIndex];
   const [loaded, setLoaded] = useState(false);
-  const handleSwipe = ( info:any) => {
+  const handleSwipe = (info: any) => {
     const swipeThreshhold = 50;
     if (info.offset.x < -swipeThreshhold) {
       setActiveIndex((prev) => (prev + 1) % crew.length);
@@ -45,8 +45,8 @@ const Crew = () => {
               animate="visible"
               exit="exit"
               drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              onDragEnd={handleSwipe}
+            dragElastic = {0.2}
+              onDragEnd={(_,info)=>handleSwipe(info)}
             >
               <motion.h3 className="text-[#d6d7fa]  opacity-60 text-md md:text-2xl tracking-[0.1rem] uppercase">
                 {activeTab.role}
@@ -99,8 +99,8 @@ const Crew = () => {
             animate="visible"
             exit="exit"
             drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={handleSwipe}
+            dragElastic= {0.2}
+            onDragEnd={(_,info)=>handleSwipe(info)}
           >
             <motion.img
               src={activeTab.images.png}

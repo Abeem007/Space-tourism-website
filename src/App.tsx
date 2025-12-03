@@ -1,8 +1,7 @@
-
+import BackgroundPreloader from "./components/BackgroundPreloader";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Destination from "./pages/Destination";
-import BackgroundPreloader from "./components/BackgroundPreloader";
 import "./index.css";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
