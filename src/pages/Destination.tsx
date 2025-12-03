@@ -30,7 +30,7 @@ const Destination = () => {
             exit="exit"
           >
             <motion.img
-              src={activeTab.images.png}
+              src={activeTab.images.webp}
               alt={activeTab.name}
               onLoad={() => setLoaded(true)}
               variants={imageVariants}

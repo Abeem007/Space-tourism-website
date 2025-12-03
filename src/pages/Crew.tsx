@@ -103,7 +103,7 @@ const Crew = () => {
             onDragEnd={(_,info)=>handleSwipe(info)}
           >
             <motion.img
-              src={activeTab.images.png}
+              src={activeTab.images.webp}
               alt={activeTab.name}
               variants={imageVariants}
               onLoad={() => setLoaded(true)}
