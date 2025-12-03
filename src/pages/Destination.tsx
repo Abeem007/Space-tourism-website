@@ -8,7 +8,8 @@ import { imageVariants,contentVariants,containerVariants,itemVariants } from "..
 const Destination = () => {
   const [activeIndex, setActiveIndex] = useState(0);
     const activeTab = destinations[activeIndex];
-
+  const [loaded, setLoaded] = useState(false);
+  
   return (
     <div className="text-white destination-bg min-h-screen ">
       <Header />
@@ -31,10 +32,11 @@ const Destination = () => {
             <motion.img
               src={activeTab.images.png}
               alt={activeTab.name}
+              onLoad={() => setLoaded(true)}
               variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              className=""
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={loaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             />
           </motion.div>
         </AnimatePresence>
@@ -51,8 +53,8 @@ const Destination = () => {
                 key={destination.id}
                 onClick={() => setActiveIndex(index)}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05,  color: "#FFF" }}
-                whileTap={{ scale: 0.95,  color: "#FFF" }}
+                whileHover={{ scale: 1.05, color: "#FFF" }}
+                whileTap={{ scale: 0.95, color: "#FFF" }}
                 className="relative cursor-pointer mb-5 font-extralight text-[#d6d7fa]/90  uppercase text-sm  md:text-[18px] lg:text-xs  transition-all duration-300 "
               >
                 {destination.name}
@@ -80,14 +82,14 @@ const Destination = () => {
               >
                 {activeTab.name}
               </motion.h1>
-              <motion.p
-                className="text-[13px] md:text-[15px] lg:text-[14px] tracking-[0.1rem] lg:tracking-tight leading-6 md:leading-8 lg:leading-7  text-center lg:text-justify md:w-[70%] lg:w-[92%] text-[#d6d7fa] px-4  md:p-0 "
+              <motion.h3
+                className="text-[13px] md:text-[15px] lg:text-[14px] xl:text-[15px] tracking-[0.1rem] lg:tracking-tight leading-6 md:leading-8 lg:leading-7  text-center lg:text-justify md:w-[70%] lg:w-[92%] text-[#d6d7fa] px-4  md:p-0 "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
                 {activeTab.description}
-              </motion.p>
+              </motion.h3>
               <div className="mt-0 lg:mt-4 w-[300px] md:w-[420px] h-px bg-white opacity-35"></div>
               <motion.div
                 className="flex flex-col items-center justify-center md:flex-row md:pb-10 gap-5 md:gap-20 text-[#d6d7fa]"

@@ -14,6 +14,8 @@ import { useState } from "react";
 const Technology = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTab = technology[activeIndex];
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <div className="technology-bg text-white min-h-screen ">
       <Header />
@@ -37,9 +39,10 @@ const Technology = () => {
               src={activeTab.images.landscape}
               alt={activeTab.name}
               variants={imageVariants}
-              initial="hidden"
-              animate="visible"
-              className="  "
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={loaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             />
           </motion.div>
         </AnimatePresence>
@@ -83,7 +86,7 @@ const Technology = () => {
               animate="visible"
               exit="exit"
             >
-              <motion.h3 className="text-white font-light opacity-50 md:text-2xl   tracking-[0.1rem] uppercase">
+              <motion.h3 className="text-white opacity-60 md:text-2xl   tracking-[0.1rem] uppercase">
                 THE TERMINOLOGY...
               </motion.h3>
               <motion.h1
@@ -94,14 +97,14 @@ const Technology = () => {
               >
                 {activeTab.name}
               </motion.h1>
-              <motion.p
-                className="text-xs  md:text-[15px] lg:text-[14px]   tracking-[0.02rem] lg:tracking-[0.01rem] leading-6 md:leading-8 lg:leading-7 text-center  lg:text-justify md:w-[70%] lg:w-full px-4 text-[#d6d7fa]   font-extralight   md:p-0  md:mt-2 lg:mt-0"
+              <motion.h3
+                className="text-xs  md:text-[15px] lg:text-[14px] xl:text-[15px]   tracking-[0.02rem] lg:tracking-[0.01rem] leading-6 md:leading-8 lg:leading-7 text-center  lg:text-justify md:w-[70%] lg:w-full px-4 text-[#d6d7fa]  md:p-0  md:mt-2 lg:mt-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
                 {activeTab.description}
-              </motion.p>
+              </motion.h3>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -120,8 +123,10 @@ const Technology = () => {
               src={activeTab.images.portrait}
               alt={activeTab.name}
               variants={imageVariants}
-              initial="hidden"
-              animate="visible"
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={loaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               className="hidden  lg:block xl:w-full xl:h-full"
             />
           </motion.div>

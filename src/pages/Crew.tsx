@@ -13,6 +13,18 @@ import {
 const Crew = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTab = crew[activeIndex];
+  const [loaded, setLoaded] = useState(false);
+  const handleSwipe = ( info:any) => {
+    const swipeThreshhold = 50;
+    if (info.offset.x < -swipeThreshhold) {
+      setActiveIndex((prev) => (prev + 1) % crew.length);
+      setLoaded(false)
+    }
+    else if (info.offset.x > swipeThreshhold) {
+      setActiveIndex((prev) => (prev - 1 + crew.length) % crew.length);
+      setLoaded(false)
+    }
+  };
   return (
     <div className="crew-bg min-h-screen text-white">
       <Header />
@@ -32,8 +44,11 @@ const Crew = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleSwipe}
             >
-              <motion.h3 className="text-[#d6d7fa] font-extralight opacity-50 text-md md:text-2xl tracking-[0.1rem] uppercase">
+              <motion.h3 className="text-[#d6d7fa]  opacity-60 text-md md:text-2xl tracking-[0.1rem] uppercase">
                 {activeTab.role}
               </motion.h3>
               <motion.h1
@@ -44,14 +59,14 @@ const Crew = () => {
               >
                 {activeTab.name}
               </motion.h1>
-              <motion.p
-                className="text-xs  md:text-[15px] lg:text-[14px]  md:tracking-[0.1rem] lg:tracking-tight leading-6 md:leading-8 lg:leading-7 text-center lg:text-justify md:w-[70%] lg:w-full  px-4 text-[#d6d7fa]   md:p-0 opacity-90 font-extralight mt-2 md:mt-3 lg:mt-2"
+              <motion.h3
+                className="text-xs  md:text-[15px] lg:text-[14px] xl:text-[15px]   md:tracking-[0.1rem] lg:tracking-tight leading-6 md:leading-8 lg:leading-7 text-center lg:text-justify md:w-[70%] lg:w-full  px-4 text-[#d6d7fa]   md:p-0 opacity-90  mt-2 md:mt-3 lg:mt-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
                 {activeTab.bio}
-              </motion.p>
+              </motion.h3>
             </motion.div>
           </AnimatePresence>
           {/* tab buttons */}
@@ -83,13 +98,18 @@ const Crew = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={handleSwipe}
           >
             <motion.img
               src={activeTab.images.png}
               alt={activeTab.name}
               variants={imageVariants}
-              initial="hidden"
-              animate="visible"
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={loaded ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               className="shadow-2xs lg:pb-20
                  `mask-[linear-gradient(to_bottom,black_70%,transparent_100%)]`
                  [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_90%)]"
