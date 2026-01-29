@@ -2,6 +2,8 @@
 # Space Tourism Website
 A responsive space tourism website built with React, TypeScript, and Framer Motion. This interactive multi-page website showcases various space destinations with smooth animations and transitions.
 
+## Live Demo
+https://space-tourism-we.netlify.app/
 
 ## Features
 
