@@ -18,7 +18,7 @@ https://space-tourism-we.netlify.app/
 . Client-side Routing: Seamless navigation with React Routine
 
 ## Project Structure
-
+``` bash
 src/
 ├── assets/          # Images and static assets
 ├── components/      # Reusable components
@@ -32,6 +32,7 @@ src/
 ├── data/           # JSON data files
 │   └── data.json   # Destination data
 └── main.tsx        # Application entry point
+```
 
 ## Technologies Used
 
